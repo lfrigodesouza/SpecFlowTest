@@ -90,21 +90,23 @@ namespace SpecFlowTesterTest
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Teste de Login")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TestLogin")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("testLogin")]
         public virtual void TesteDeLogin()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Teste de Login", null, ((string[])(null)));
-#line 5
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Teste de Login", null, new string[] {
+                        "testLogin"});
+#line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 6
- testRunner.Given("Que navego para pagina Inicial", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 7
- testRunner.When("Informo o usuario \"tomsmith\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.Given("Que navego para pagina Inicial", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 8
- testRunner.And("Informo a senha \"SuperSecretPassword!\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+ testRunner.When("Informo o usuario \"tomsmith\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 9
- testRunner.And("Clico no botao Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+ testRunner.And("Informo a senha \"SuperSecretPassword!\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line 10
+ testRunner.And("Clico no botao Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 11
  testRunner.Then("Devo estar Logado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             this.ScenarioCleanup();
@@ -112,19 +114,25 @@ this.ScenarioInitialize(scenarioInfo);
         
         public virtual void TesteDeMultiplosLogins(string username, string password, string mensagem, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Teste de multiplos logins", null, exampleTags);
-#line 12
+            string[] @__tags = new string[] {
+                    "testLogin"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Teste de multiplos logins", null, @__tags);
+#line 14
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 13
-    testRunner.Given("Que navego para pagina Inicial", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
-#line 14
-    testRunner.When(string.Format("Informo o usuario \"{0}\"", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 15
-    testRunner.And(string.Format("Informo a senha \"{0}\"", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+    testRunner.Given("Que navego para pagina Inicial", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 16
-    testRunner.And("Clico no botao Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+    testRunner.When(string.Format("Informo o usuario \"{0}\"", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 17
+    testRunner.And(string.Format("Informo a senha \"{0}\"", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 18
+    testRunner.And("Clico no botao Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 19
     testRunner.Then(string.Format("Deve ser apresentada a mensagem {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
@@ -133,13 +141,14 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Teste de multiplos logins: Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TestLogin")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("testLogin")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:username", "tomsmith")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password", "SuperSecretPassword!")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mensagem", "secure area")]
         public virtual void TesteDeMultiplosLogins_Variant0()
         {
-#line 12
+#line 14
 this.TesteDeMultiplosLogins("tomsmith", "SuperSecretPassword!", "secure area", ((string[])(null)));
 #line hidden
         }
@@ -147,13 +156,14 @@ this.TesteDeMultiplosLogins("tomsmith", "SuperSecretPassword!", "secure area", (
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Teste de multiplos logins: Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TestLogin")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("testLogin")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:username", "admin")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password", "17111997")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mensagem", "username is invalid")]
         public virtual void TesteDeMultiplosLogins_Variant1()
         {
-#line 12
+#line 14
 this.TesteDeMultiplosLogins("admin", "17111997", "username is invalid", ((string[])(null)));
 #line hidden
         }
@@ -161,13 +171,14 @@ this.TesteDeMultiplosLogins("admin", "17111997", "username is invalid", ((string
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Teste de multiplos logins: Variant 2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TestLogin")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("testLogin")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:username", "admin")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password", "admin")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mensagem", "username is invalid")]
         public virtual void TesteDeMultiplosLogins_Variant2()
         {
-#line 12
+#line 14
 this.TesteDeMultiplosLogins("admin", "admin", "username is invalid", ((string[])(null)));
 #line hidden
         }
@@ -175,14 +186,15 @@ this.TesteDeMultiplosLogins("admin", "admin", "username is invalid", ((string[])
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Teste de multiplos logins: Variant 3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TestLogin")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("testLogin")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:username", "tomsmith")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password", "17111997")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mensagem", "username is invalid")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mensagem", "password is invalid")]
         public virtual void TesteDeMultiplosLogins_Variant3()
         {
-#line 12
-this.TesteDeMultiplosLogins("tomsmith", "17111997", "username is invalid", ((string[])(null)));
+#line 14
+this.TesteDeMultiplosLogins("tomsmith", "17111997", "password is invalid", ((string[])(null)));
 #line hidden
         }
     }

@@ -2,6 +2,7 @@
 Funcionalidade: TestLogin
 				Testa o login
 
+@testLogin
 Cenario: Teste de Login
 	Dado Que navego para pagina Inicial
 	Quando Informo o usuario "tomsmith"
@@ -9,6 +10,7 @@ Cenario: Teste de Login
 	E Clico no botao Login
 	Entao Devo estar Logado
 
+@testLogin
 Esquema do Cenario: Teste de multiplos logins
     Dado Que navego para pagina Inicial
     Quando Informo o usuario "<username>"
@@ -21,4 +23,4 @@ Esquema do Cenario: Teste de multiplos logins
     | tomsmith | SuperSecretPassword! | secure area         |
     | admin    | 17111997             | username is invalid |
     | admin    | admin                | username is invalid |
-    | tomsmith | 17111997             | username is invalid |
+    | tomsmith | 17111997             | password is invalid |

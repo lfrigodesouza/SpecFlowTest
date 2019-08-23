@@ -49,32 +49,22 @@ namespace SpecFlowTesterTest
         {
 			var welcomeRibbon = _driver.FindElement(By.Id("flash")).Text;
 
-			try
-			{
-				Assert.IsTrue(welcomeRibbon.Contains("secure area", StringComparison.CurrentCultureIgnoreCase));
-			}
-			finally
-			{
-				_driver.Close();
-				_driver.Quit();
-			}
-		}
+            Assert.IsTrue(welcomeRibbon.Contains("secure area", StringComparison.CurrentCultureIgnoreCase));
+        }
 
         [Then(@"Deve ser apresentada a mensagem (.*)")]
         public void EntaoDeveSerApresentadaAMensagem(string mensagem)
         {
             var welcomeRibbon = _driver.FindElement(By.Id("flash")).Text;
 
-            try
-            {
-                Assert.IsTrue(welcomeRibbon.Contains(mensagem, StringComparison.CurrentCultureIgnoreCase));
-            }
-            finally
-            {
-                _driver.Close();
-                _driver.Quit();
-            }
+            Assert.IsTrue(welcomeRibbon.Contains(mensagem, StringComparison.CurrentCultureIgnoreCase));
         }
 
+        [AfterScenario("@testLogin")]
+        public void After()
+        {
+            _driver.Close();
+            _driver.Quit();
+        }
     }
 }
