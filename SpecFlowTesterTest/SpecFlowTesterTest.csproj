@@ -18,30 +18,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Example\Example.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Calculator.feature.cs">
+    <Compile Update="TestLogin.feature.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Calculator.feature</DependentUpon>
-    </Compile>
-    <Compile Update="SpecFlowFeature1.feature.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
+      <DependentUpon>TestLogin.feature</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <SpecFlowFeatureFiles Update="Calculator.feature">
+    <SpecFlowFeatureFiles Update="TestLogin.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Calculator.feature.cs</LastGenOutput>
-    </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="SpecFlowFeature1.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SpecFlowFeature1.feature.cs</LastGenOutput>
+      <LastGenOutput>TestLogin.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
   </ItemGroup>
 

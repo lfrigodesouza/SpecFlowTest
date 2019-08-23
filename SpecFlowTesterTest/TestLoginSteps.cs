@@ -7,7 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace SpecFlowTesterTest
 {
     [Binding]
-    public class Feature1Steps
+    public class TestLoginSteps
     {
 		private IWebDriver _driver;
 		private string usernameName;
@@ -19,7 +19,7 @@ namespace SpecFlowTesterTest
 			_driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 			_driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(10);
 			_driver.Manage().Window.Maximize();
-			_driver.Navigate().GoToUrl("http://localhost:4200/");
+			_driver.Navigate().GoToUrl("https://the-internet.herokuapp.com/login");
         }
         
         [When(@"Informo o usuario ""(.*)""")]
@@ -40,18 +40,18 @@ namespace SpecFlowTesterTest
         [When(@"Clico no botao Login")]
         public void QuandoClicoNoBotaoLogin()
         {
-			var loginBtn = _driver.FindElement(By.Id("login-button"));
+			var loginBtn = _driver.FindElement(By.CssSelector("#login > button > i"));
 			loginBtn.Click();
         }
         
-        [Then(@"Devo estar na tela de Matches")]
-        public void EntaoDevoEstarNaTelaDeMatches()
+        [Then(@"Devo estar Logado")]
+        public void EntaoDevoEstarLogado()
         {
-			var welcomeRibbon = _driver.FindElement(By.Id("welcome-ribbon")).Text;
+			var welcomeRibbon = _driver.FindElement(By.Id("flash")).Text;
 
 			try
 			{
-				Assert.IsTrue(welcomeRibbon.Contains(usernameName, StringComparison.CurrentCultureIgnoreCase));
+				Assert.IsTrue(welcomeRibbon.Contains("secure area", StringComparison.CurrentCultureIgnoreCase));
 			}
 			finally
 			{
@@ -59,5 +59,22 @@ namespace SpecFlowTesterTest
 				_driver.Quit();
 			}
 		}
+
+        [Then(@"Deve ser apresentada a mensagem (.*)")]
+        public void EntaoDeveSerApresentadaAMensagem(string mensagem)
+        {
+            var welcomeRibbon = _driver.FindElement(By.Id("flash")).Text;
+
+            try
+            {
+                Assert.IsTrue(welcomeRibbon.Contains(mensagem, StringComparison.CurrentCultureIgnoreCase));
+            }
+            finally
+            {
+                _driver.Close();
+                _driver.Quit();
+            }
+        }
+
     }
 }

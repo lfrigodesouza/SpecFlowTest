@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowTesterTest", "SpecFlowTesterTest\SpecFlowTesterTest.csproj", "{BEB05C29-0090-4B6D-94B3-2968D80A1401}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{B4771C6B-B378-454E-B614-7B31501AEA1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecFlowTesterTest", "SpecFlowTesterTest\SpecFlowTesterTest.csproj", "{BEB05C29-0090-4B6D-94B3-2968D80A1401}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{BEB05C29-0090-4B6D-94B3-2968D80A1401}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEB05C29-0090-4B6D-94B3-2968D80A1401}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEB05C29-0090-4B6D-94B3-2968D80A1401}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B4771C6B-B378-454E-B614-7B31501AEA1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4771C6B-B378-454E-B614-7B31501AEA1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4771C6B-B378-454E-B614-7B31501AEA1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B4771C6B-B378-454E-B614-7B31501AEA1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
