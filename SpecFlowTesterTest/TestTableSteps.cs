@@ -40,7 +40,7 @@ namespace SpecFlowTesterTest
         [When(@"eu acessar a pagina da tabela")]
         public void QuandoEuAcessarAPaginaDaTabela()
         {
-            _driver = new ChromeDriver();
+			_driver = new ChromeDriver(Environment.CurrentDirectory);
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(10);
             _driver.Manage().Window.Maximize();
